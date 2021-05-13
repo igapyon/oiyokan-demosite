@@ -216,14 +216,6 @@
             "nullable": false
           },
           {
-            "name": "TimeOfDay1",
-            "dbName": "TimeOfDay1",
-            "edmType": "Edm.TimeOfDay",
-            "jdbcType": "Types.TIME",
-            "dbType": "TIME",
-            "nullable": true
-          },
-          {
             "name": "Binary1",
             "dbName": "Binary1",
             "edmType": "Edm.Binary",
@@ -479,14 +471,6 @@
             "edmType": "Edm.DateTimeOffset",
             "jdbcType": "Types.TIMESTAMP",
             "dbType": "TIMESTAMP",
-            "nullable": true
-          },
-          {
-            "name": "TimeOfDay1",
-            "dbName": "TimeOfDay1",
-            "edmType": "Edm.TimeOfDay",
-            "jdbcType": "Types.TIME",
-            "dbType": "TIME",
             "nullable": true
           },
           {
@@ -788,7 +772,7 @@
       "entityType": {
         "name": "ODataTest9",
         "dbName": "ODataTest9",
-        "keyName": [],
+        "keyName": ["Name", "Description"],
         "property": [
           {
             "name": "Name",
@@ -1051,14 +1035,6 @@
             "jdbcType": "Types.TIMESTAMP",
             "dbType": "TIMESTAMP",
             "nullable": false
-          },
-          {
-            "name": "TimeOfDay1",
-            "dbName": "TimeOfDay1",
-            "edmType": "Edm.TimeOfDay",
-            "jdbcType": "Types.TIME",
-            "dbType": "TIME",
-            "nullable": true
           }
         ]
       }

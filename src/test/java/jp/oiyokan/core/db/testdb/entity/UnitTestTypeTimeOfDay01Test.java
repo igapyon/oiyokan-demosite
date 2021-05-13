@@ -15,20 +15,8 @@
  */
 package jp.oiyokan.core.db.testdb.entity;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.apache.olingo.server.api.ODataResponse;
-import org.junit.jupiter.api.Test;
-
-import jp.oiyokan.OiyokanConstants;
-import jp.oiyokan.OiyokanUnittestUtil;
-import jp.oiyokan.common.OiyoInfo;
-import jp.oiyokan.common.OiyoInfoUtil;
-import jp.oiyokan.common.OiyoUrlUtil;
-import jp.oiyokan.dto.OiyoSettingsDatabase;
-import jp.oiyokan.util.OiyokanTestUtil;
 
 /**
  * 後方空白が適切な状態での挙動確認。
@@ -36,48 +24,4 @@ import jp.oiyokan.util.OiyokanTestUtil;
 class UnitTestTypeTimeOfDay01Test {
     @SuppressWarnings("unused")
     private static final Log log = LogFactory.getLog(UnitTestTypeTimeOfDay01Test.class);
-
-    @Test
-    void test03() throws Exception {
-        @SuppressWarnings("unused")
-        final OiyoInfo oiyoInfo = OiyokanUnittestUtil.setupUnittestDatabase();
-
-        final String dateStringInput = "21:53:00";
-
-        ODataResponse resp = OiyokanTestUtil.callPost("/ODataTest1", //
-                "{\n" //
-                        + "  \"TimeOfDay1\": \"" + dateStringInput + "\"\n" //
-                        + "}");
-        String result = OiyokanTestUtil.stream2String(resp.getContent());
-        log.info(result);
-        final String idString = OiyokanTestUtil.getValueFromResultByKey(result, "ID");
-        assertEquals(201, resp.getStatusCode(), "TimeOfDay型を INSERTできることを確認.");
-
-        resp = OiyokanTestUtil.callGet("/ODataTest1(" + idString + ")", null);
-        result = OiyokanTestUtil.stream2String(resp.getContent());
-        String dateString = OiyokanTestUtil.getValueFromResultByKey(result, "TimeOfDay1");
-        // log.info(result);
-        assertEquals("\"" + dateStringInput + "\"", dateString, "格納した TimeOfDay型が同値で取得できること。");
-        assertEquals(200, resp.getStatusCode());
-
-        OiyoSettingsDatabase database = OiyoInfoUtil.getOiyoDatabaseByEntitySetName(oiyoInfo, "ODataTest1");
-        OiyokanConstants.DatabaseType databaseType = OiyokanConstants.DatabaseType.valueOf(database.getType());
-        switch (databaseType) {
-        case SQLSV2008:
-            log.warn("SQLServer2008にてこのルートのテストがエラー");
-            break;
-        default:
-            resp = OiyokanTestUtil.callGet("/ODataTest1",
-                    "$filter=TimeOfDay1 eq " + OiyoUrlUtil.encodeUrlQuery(dateStringInput));
-            result = OiyokanTestUtil.stream2String(resp.getContent());
-            // log.info(result);
-            dateString = OiyokanTestUtil.getValueFromResultByKey(result, "TimeOfDay1");
-            assertEquals(200, resp.getStatusCode());
-            break;
-        }
-
-        // DELETE
-        resp = OiyokanTestUtil.callDelete("/ODataTest1(" + idString + ")");
-        assertEquals(204, resp.getStatusCode(), "作成データを後始末.");
-    }
 }
