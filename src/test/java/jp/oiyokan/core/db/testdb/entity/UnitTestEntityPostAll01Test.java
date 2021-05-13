@@ -52,7 +52,6 @@ class UnitTestEntityPostAll01Test {
                         + "  \"Double1\": 123.4567890123,\n" //
                         + "  \"Date1\": \"2021-04-10\",\n" //
                         + "  \"DateTimeOffset1\": \"2021-04-10T10:12:49.082587Z\",\n" //
-                        + "  \"TimeOfDay1\": \"19:12:49\",\n" //
                         + "  \"Binary1\": \"SGVsbG8gd29ybGQh\",\n" //
                         + "  \"VarBinary1\": \"SGVsbG8gd29ybGQh\",\n" //
                         + "  \"LongVarBinary1\": \"SGVsbG8gd29ybGQh\",\n" //

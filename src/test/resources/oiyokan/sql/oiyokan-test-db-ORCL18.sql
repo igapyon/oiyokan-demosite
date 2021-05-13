@@ -17,7 +17,6 @@ CREATE TABLE
     , Double1 FLOAT DEFAULT 123.4567890123
     , Date1 DATE
     , DateTimeOffset1 TIMESTAMP
-    , TimeOfDay1 TIMESTAMP
     , Binary1 RAW(128)
     , VarBinary1 RAW(128)
     , LongVarBinary1 RAW(2000)
@@ -54,7 +53,6 @@ CREATE table
     , Double1 FLOAT DEFAULT 123.4567890123
     , Date1 DATE DEFAULT CURRENT_DATE NOT NULL
     , DateTimeOffset1 TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL
-    , TimeOfDay1 TIMESTAMP DEFAULT CURRENT_TIMESTAMP
     , Binary1 RAW(128)
     , VarBinary1 RAW(128)
     , LongVarBinary1 RAW(2000)

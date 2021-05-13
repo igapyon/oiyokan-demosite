@@ -232,15 +232,6 @@
             "dbDefault": "CURRENT_TIMESTAMP"
           },
           {
-            "name": "TimeOfDay1",
-            "dbName": "TimeOfDay1",
-            "edmType": "Edm.TimeOfDay",
-            "jdbcType": "Types.TIME",
-            "dbType": "TIME",
-            "nullable": true,
-            "dbDefault": "CURRENT_TIME"
-          },
-          {
             "name": "Binary1",
             "dbName": "Binary1",
             "edmType": "Edm.Binary",
@@ -523,15 +514,6 @@
             "dbType": "TIMESTAMP",
             "nullable": false,
             "dbDefault": "CURRENT_TIMESTAMP"
-          },
-          {
-            "name": "TimeOfDay1",
-            "dbName": "TimeOfDay1",
-            "edmType": "Edm.TimeOfDay",
-            "jdbcType": "Types.TIME",
-            "dbType": "TIME",
-            "nullable": true,
-            "dbDefault": "CURRENT_TIME"
           },
           {
             "name": "Binary1",
@@ -948,7 +930,7 @@
       "entityType": {
         "name": "ODataTest9",
         "dbName": "ODataTest9",
-        "keyName": [],
+        "keyName": ["Name", "Description"],
         "property": [
           {
             "name": "Name",
@@ -1128,15 +1110,6 @@
             "dbType": "TIMESTAMP",
             "nullable": false,
             "dbDefault": "CURRENT_TIMESTAMP"
-          },
-          {
-            "name": "TimeOfDay1",
-            "dbName": "TimeOfDay1",
-            "edmType": "Edm.TimeOfDay",
-            "jdbcType": "Types.TIME",
-            "dbType": "TIME",
-            "nullable": true,
-            "dbDefault": "CURRENT_TIME"
           }
         ]
       }
