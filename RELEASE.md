@@ -3,6 +3,7 @@
 ## JA
 
 - 本体ライブラリバージョンアップに追従。
+- Oiyokanの説明になっていたのを、Oiyokan の DemoSite であるとの説明に更新。
 
 # Internal (2021-05-13)
 
