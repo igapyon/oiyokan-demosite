@@ -1,0 +1,2388 @@
+{
+  "namespace": "Oiyokan",
+  "containerName": "Container",
+  "database": [
+    {
+      "name": "oiyoUnitTestDb",
+      "type": "h2",
+      "description": "Oiyokan internal Target Test DB. Used for build unit test.",
+      "jdbcDriver": "org.h2.Driver",
+      "jdbcUrl": "jdbc:h2:file:./src/main/resources/db/oiyokan-internal;DB_CLOSE_DELAY=-1;DATABASE_TO_UPPER=FALSE;MODE=MSSQLServer",
+      "jdbcUser": "sa",
+      "jdbcPassPlain": ""
+    },
+    {
+      "name": "postgres1",
+      "type": "PostgreSQL",
+      "description": "Sample postgres settings. Change the settings to suit your environment.",
+      "jdbcDriver": "org.postgresql.Driver",
+      "jdbcUrl": "jdbc:postgresql://localhost:5432/dvdrental",
+      "jdbcUser": "",
+      "jdbcPassPlain": ""
+    }
+  ],
+  "entitySet": [
+    {
+      "name": "ODataTest1",
+      "description": "Description.",
+      "dbSettingName": "postgres1",
+      "canCreate": true,
+      "canRead": true,
+      "canUpdate": true,
+      "canDelete": true,
+      "entityType": {
+        "name": "ODataTest1",
+        "dbName": "ODataTest1",
+        "keyName": ["ID"],
+        "property": [
+          {
+            "name": "ID",
+            "dbName": "ID",
+            "edmType": "Edm.Int32",
+            "jdbcType": "Types.INTEGER",
+            "dbType": "serial",
+            "autoGenKey": true,
+            "nullable": true
+          },
+          {
+            "name": "Name",
+            "dbName": "Name",
+            "edmType": "Edm.String",
+            "jdbcType": "Types.VARCHAR",
+            "dbType": "varchar",
+            "nullable": true,
+            "maxLength": 80,
+            "dbDefault": "'NULLABLE UnitTest'::character varying"
+          },
+          {
+            "name": "Description",
+            "dbName": "description",
+            "edmType": "Edm.String",
+            "jdbcType": "Types.VARCHAR",
+            "dbType": "varchar",
+            "nullable": true,
+            "maxLength": 250
+          },
+          {
+            "name": "Sbyte1",
+            "dbName": "sbyte1",
+            "edmType": "Edm.Int16",
+            "jdbcType": "Types.SMALLINT",
+            "dbType": "int2",
+            "nullable": true,
+            "dbDefault": "127"
+          },
+          {
+            "name": "Int16a",
+            "dbName": "int16a",
+            "edmType": "Edm.Int16",
+            "jdbcType": "Types.SMALLINT",
+            "dbType": "int2",
+            "nullable": true,
+            "dbDefault": "32767"
+          },
+          {
+            "name": "Int32a",
+            "dbName": "int32a",
+            "edmType": "Edm.Int32",
+            "jdbcType": "Types.INTEGER",
+            "dbType": "int4",
+            "nullable": true,
+            "dbDefault": "2147483647"
+          },
+          {
+            "name": "Int64a",
+            "dbName": "int64a",
+            "edmType": "Edm.Int64",
+            "jdbcType": "Types.BIGINT",
+            "dbType": "int8",
+            "nullable": true,
+            "dbDefault": "2147483647"
+          },
+          {
+            "name": "Decimal1",
+            "dbName": "decimal1",
+            "edmType": "Edm.Decimal",
+            "jdbcType": "Types.NUMERIC",
+            "dbType": "numeric",
+            "nullable": true,
+            "precision": 6,
+            "scale": 2,
+            "dbDefault": "1234.56"
+          },
+          {
+            "name": "StringChar8",
+            "dbName": "stringchar8",
+            "edmType": "Edm.String",
+            "jdbcType": "Types.CHAR",
+            "dbType": "bpchar",
+            "nullable": true,
+            "maxLength": 8,
+            "lengthFixed": true,
+            "dbDefault": "'CHAR_VAL'::bpchar"
+          },
+          {
+            "name": "StringVar255",
+            "dbName": "stringvar255",
+            "edmType": "Edm.String",
+            "jdbcType": "Types.VARCHAR",
+            "dbType": "varchar",
+            "nullable": true,
+            "maxLength": 255,
+            "dbDefault": "'VARCHAR255'::character varying"
+          },
+          {
+            "name": "StringLongVar1",
+            "dbName": "stringlongvar1",
+            "edmType": "Edm.String",
+            "jdbcType": "Types.VARCHAR",
+            "dbType": "varchar",
+            "nullable": true,
+            "maxLength": 2000,
+            "dbDefault": "'LONGVARCHAR'::character varying"
+          },
+          {
+            "name": "Clob1",
+            "dbName": "clob1",
+            "edmType": "Edm.String",
+            "jdbcType": "Types.VARCHAR",
+            "dbType": "text",
+            "jdbcStream": true,
+            "nullable": true,
+            "dbDefault": "'CLOB'::text"
+          },
+          {
+            "name": "Boolean1",
+            "dbName": "boolean1",
+            "edmType": "Edm.Boolean",
+            "jdbcType": "Types.BIT",
+            "dbType": "bool",
+            "nullable": true,
+            "dbDefault": "false"
+          },
+          {
+            "name": "Single1",
+            "dbName": "single1",
+            "edmType": "Edm.Single",
+            "jdbcType": "Types.REAL",
+            "dbType": "float4",
+            "nullable": true,
+            "dbDefault": "123.45"
+          },
+          {
+            "name": "Double1",
+            "dbName": "double1",
+            "edmType": "Edm.Double",
+            "jdbcType": "Types.DOUBLE",
+            "dbType": "float8",
+            "nullable": true,
+            "dbDefault": "123.4567890123"
+          },
+          {
+            "name": "Date1",
+            "dbName": "date1",
+            "edmType": "Edm.Date",
+            "jdbcType": "Types.DATE",
+            "dbType": "date",
+            "nullable": true,
+            "dbDefault": "CURRENT_DATE"
+          },
+          {
+            "name": "DateTimeOffset1",
+            "dbName": "datetimeoffset1",
+            "edmType": "Edm.DateTimeOffset",
+            "jdbcType": "Types.TIMESTAMP",
+            "dbType": "timestamp",
+            "nullable": true,
+            "dbDefault": "CURRENT_TIMESTAMP"
+          },
+          {
+            "name": "Binary1",
+            "dbName": "binary1",
+            "edmType": "Edm.Binary",
+            "jdbcStream": true,
+            "jdbcType": "Types.BINARY",
+            "dbType": "bytea",
+            "nullable": true
+          },
+          {
+            "name": "VarBinary1",
+            "dbName": "varbinary1",
+            "edmType": "Edm.Binary",
+            "jdbcStream": true,
+            "jdbcType": "Types.BINARY",
+            "dbType": "bytea",
+            "nullable": true
+          },
+          {
+            "name": "LongVarBinary1",
+            "dbName": "longvarbinary1",
+            "edmType": "Edm.Binary",
+            "jdbcStream": true,
+            "jdbcType": "Types.BINARY",
+            "dbType": "bytea",
+            "nullable": true
+          },
+          {
+            "name": "Blob1",
+            "dbName": "blob1",
+            "edmType": "Edm.Binary",
+            "jdbcType": "Types.BINARY",
+            "jdbcStream": true,
+            "dbType": "bytea",
+            "nullable": true
+          }
+        ]
+      }
+    },
+    {
+      "name": "ODataTest2",
+      "description": "Description.",
+      "dbSettingName": "postgres1",
+      "canCreate": true,
+      "canRead": true,
+      "canUpdate": true,
+      "canDelete": true,
+      "entityType": {
+        "name": "ODataTest2",
+        "dbName": "odatatest2",
+        "keyName": ["Decimal1", "StringChar8", "StringVar255"],
+        "property": [
+          {
+            "name": "Decimal1",
+            "dbName": "decimal1",
+            "edmType": "Edm.Decimal",
+            "jdbcType": "Types.NUMERIC",
+            "dbType": "numeric",
+            "nullable": false,
+            "precision": 6,
+            "scale": 2,
+            "dbDefault": "1234.56"
+          },
+          {
+            "name": "StringChar8",
+            "dbName": "stringchar8",
+            "edmType": "Edm.String",
+            "jdbcType": "Types.CHAR",
+            "dbType": "bpchar",
+            "nullable": false,
+            "maxLength": 8,
+            "lengthFixed": true,
+            "dbDefault": "'CHAR_VAL'::bpchar"
+          },
+          {
+            "name": "StringVar255",
+            "dbName": "stringvar255",
+            "edmType": "Edm.String",
+            "jdbcType": "Types.VARCHAR",
+            "dbType": "varchar",
+            "nullable": false,
+            "maxLength": 255,
+            "dbDefault": "'VARCHAR255'::character varying"
+          },
+          {
+            "name": "Name",
+            "dbName": "name",
+            "edmType": "Edm.String",
+            "jdbcType": "Types.VARCHAR",
+            "dbType": "varchar",
+            "nullable": false,
+            "maxLength": 80,
+            "dbDefault": "'Multi-col UnitTest'::character varying"
+          },
+          {
+            "name": "Description",
+            "dbName": "description",
+            "edmType": "Edm.String",
+            "jdbcType": "Types.VARCHAR",
+            "dbType": "varchar",
+            "nullable": true,
+            "maxLength": 250
+          }
+        ]
+      }
+    },
+    {
+      "name": "ODataTest3",
+      "description": "Description.",
+      "dbSettingName": "postgres1",
+      "canCreate": true,
+      "canRead": true,
+      "canUpdate": true,
+      "canDelete": true,
+      "entityType": {
+        "name": "ODataTest3",
+        "dbName": "odatatest3",
+        "keyName": ["ID"],
+        "property": [
+          {
+            "name": "ID",
+            "dbName": "id",
+            "edmType": "Edm.Int32",
+            "jdbcType": "Types.INTEGER",
+            "dbType": "serial",
+            "autoGenKey": true,
+            "nullable": true
+          },
+          {
+            "name": "Name",
+            "dbName": "name",
+            "edmType": "Edm.String",
+            "jdbcType": "Types.VARCHAR",
+            "dbType": "varchar",
+            "nullable": false,
+            "maxLength": 80,
+            "dbDefault": "'Types UnitTest'::character varying"
+          },
+          {
+            "name": "Description",
+            "dbName": "description",
+            "edmType": "Edm.String",
+            "jdbcType": "Types.VARCHAR",
+            "dbType": "varchar",
+            "nullable": false,
+            "maxLength": 250,
+            "dbDefault": "'Types UnitTest table.'::character varying"
+          },
+          {
+            "name": "Sbyte1",
+            "dbName": "sbyte1",
+            "edmType": "Edm.Int16",
+            "jdbcType": "Types.SMALLINT",
+            "dbType": "int2",
+            "nullable": true,
+            "dbDefault": "127"
+          },
+          {
+            "name": "Int16a",
+            "dbName": "int16a",
+            "edmType": "Edm.Int16",
+            "jdbcType": "Types.SMALLINT",
+            "dbType": "int2",
+            "nullable": true,
+            "dbDefault": "32767"
+          },
+          {
+            "name": "Int32a",
+            "dbName": "int32a",
+            "edmType": "Edm.Int32",
+            "jdbcType": "Types.INTEGER",
+            "dbType": "int4",
+            "nullable": true,
+            "dbDefault": "2147483647"
+          },
+          {
+            "name": "Int64a",
+            "dbName": "int64a",
+            "edmType": "Edm.Int64",
+            "jdbcType": "Types.BIGINT",
+            "dbType": "int8",
+            "nullable": true,
+            "dbDefault": "2147483647"
+          },
+          {
+            "name": "Decimal1",
+            "dbName": "decimal1",
+            "edmType": "Edm.Decimal",
+            "jdbcType": "Types.NUMERIC",
+            "dbType": "numeric",
+            "nullable": true,
+            "precision": 6,
+            "scale": 2,
+            "dbDefault": "1234.56"
+          },
+          {
+            "name": "StringChar8",
+            "dbName": "stringchar8",
+            "edmType": "Edm.String",
+            "jdbcType": "Types.CHAR",
+            "dbType": "bpchar",
+            "nullable": true,
+            "maxLength": 8,
+            "lengthFixed": true,
+            "dbDefault": "'CHAR_VAL'::bpchar"
+          },
+          {
+            "name": "StringVar255",
+            "dbName": "stringvar255",
+            "edmType": "Edm.String",
+            "jdbcType": "Types.VARCHAR",
+            "dbType": "varchar",
+            "nullable": true,
+            "maxLength": 255,
+            "dbDefault": "'VARCHAR255'::character varying"
+          },
+          {
+            "name": "StringLongVar1",
+            "dbName": "stringlongvar1",
+            "edmType": "Edm.String",
+            "jdbcType": "Types.VARCHAR",
+            "dbType": "varchar",
+            "nullable": true,
+            "maxLength": 2000,
+            "dbDefault": "'LONGVARCHAR'::character varying"
+          },
+          {
+            "name": "Clob1",
+            "dbName": "clob1",
+            "edmType": "Edm.String",
+            "jdbcType": "Types.VARCHAR",
+            "dbType": "text",
+            "jdbcStream": true,
+            "nullable": true,
+            "dbDefault": "'CLOB'::text"
+          },
+          {
+            "name": "Boolean1",
+            "dbName": "boolean1",
+            "edmType": "Edm.Boolean",
+            "jdbcType": "Types.BIT",
+            "dbType": "bool",
+            "nullable": false,
+            "dbDefault": "false"
+          },
+          {
+            "name": "Single1",
+            "dbName": "single1",
+            "edmType": "Edm.Single",
+            "jdbcType": "Types.REAL",
+            "dbType": "float4",
+            "nullable": true,
+            "dbDefault": "123.456789"
+          },
+          {
+            "name": "Double1",
+            "dbName": "double1",
+            "edmType": "Edm.Double",
+            "jdbcType": "Types.DOUBLE",
+            "dbType": "float8",
+            "nullable": true,
+            "dbDefault": "123.4567890123"
+          },
+          {
+            "name": "Date1",
+            "dbName": "date1",
+            "edmType": "Edm.Date",
+            "jdbcType": "Types.DATE",
+            "dbType": "date",
+            "nullable": false,
+            "dbDefault": "CURRENT_DATE"
+          },
+          {
+            "name": "DateTimeOffset1",
+            "dbName": "datetimeoffset1",
+            "edmType": "Edm.DateTimeOffset",
+            "jdbcType": "Types.TIMESTAMP",
+            "dbType": "timestamp",
+            "nullable": false,
+            "dbDefault": "CURRENT_TIMESTAMP"
+          },
+          {
+            "name": "Binary1",
+            "dbName": "binary1",
+            "edmType": "Edm.Binary",
+            "jdbcType": "Types.BINARY",
+            "dbType": "bytea",
+            "jdbcStream": true,
+            "nullable": true
+          },
+          {
+            "name": "VarBinary1",
+            "dbName": "varbinary1",
+            "edmType": "Edm.Binary",
+            "jdbcType": "Types.BINARY",
+            "dbType": "bytea",
+            "jdbcStream": true,
+            "nullable": true
+          },
+          {
+            "name": "LongVarBinary1",
+            "dbName": "longvarbinary1",
+            "edmType": "Edm.Binary",
+            "jdbcType": "Types.BINARY",
+            "dbType": "bytea",
+            "jdbcStream": true,
+            "nullable": true
+          },
+          {
+            "name": "Blob1",
+            "dbName": "blob1",
+            "edmType": "Edm.Binary",
+            "jdbcType": "Types.BINARY",
+            "dbType": "bytea",
+            "jdbcStream": true,
+            "nullable": true
+          }
+        ]
+      }
+    },
+    {
+      "name": "ODataTest4",
+      "description": "Description.",
+      "dbSettingName": "postgres1",
+      "canCreate": true,
+      "canRead": true,
+      "canUpdate": true,
+      "canDelete": true,
+      "entityType": {
+        "name": "ODataTest4",
+        "dbName": "OData Test4",
+        "keyName": ["I_D", "Na_me"],
+        "property": [
+          {
+            "name": "I_D",
+            "dbName": "I D",
+            "edmType": "Edm.Int32",
+            "jdbcType": "Types.INTEGER",
+            "dbType": "int4",
+            "nullable": false
+          },
+          {
+            "name": "Na_me",
+            "dbName": "Na me",
+            "edmType": "Edm.String",
+            "jdbcType": "Types.VARCHAR",
+            "dbType": "varchar",
+            "nullable": false,
+            "maxLength": 80,
+            "dbDefault": "'Column name w/space UnitTest'::character varying"
+          },
+          {
+            "name": "Va_lue1",
+            "dbName": "Va lue1",
+            "edmType": "Edm.String",
+            "jdbcType": "Types.VARCHAR",
+            "dbType": "varchar",
+            "nullable": true,
+            "maxLength": 255,
+            "dbDefault": "'VALUEVALUE12345'::character varying"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ODataTest5",
+      "description": "Description.",
+      "dbSettingName": "postgres1",
+      "canCreate": true,
+      "canRead": true,
+      "canUpdate": true,
+      "canDelete": true,
+      "entityType": {
+        "name": "ODataTest5",
+        "dbName": "odatatest5",
+        "keyName": ["Iden1"],
+        "property": [
+          {
+            "name": "Iden1",
+            "dbName": "iden1",
+            "edmType": "Edm.Int32",
+            "jdbcType": "Types.INTEGER",
+            "dbType": "serial",
+            "autoGenKey": true,
+            "nullable": true
+          },
+          {
+            "name": "Name",
+            "dbName": "name",
+            "edmType": "Edm.String",
+            "jdbcType": "Types.VARCHAR",
+            "dbType": "varchar",
+            "nullable": true,
+            "maxLength": 80,
+            "dbDefault": "'IDENTITY UnitTest'::character varying"
+          },
+          {
+            "name": "Value1",
+            "dbName": "value1",
+            "edmType": "Edm.String",
+            "jdbcType": "Types.VARCHAR",
+            "dbType": "varchar",
+            "nullable": true,
+            "maxLength": 255,
+            "dbDefault": "'VALUEVALUE12345'::character varying"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ODataTest6",
+      "description": "Description.",
+      "dbSettingName": "postgres1",
+      "canCreate": true,
+      "canRead": true,
+      "canUpdate": true,
+      "canDelete": true,
+      "entityType": {
+        "name": "ODataTest6",
+        "dbName": "odatatest6",
+        "keyName": ["ID"],
+        "property": [
+          {
+            "name": "ID",
+            "dbName": "id",
+            "edmType": "Edm.Int32",
+            "jdbcType": "Types.INTEGER",
+            "dbType": "serial",
+            "autoGenKey": true,
+            "nullable": true
+          },
+          {
+            "name": "Name",
+            "dbName": "name",
+            "edmType": "Edm.String",
+            "jdbcType": "Types.VARCHAR",
+            "dbType": "varchar",
+            "nullable": true,
+            "maxLength": 80,
+            "dbDefault": "'Binary UnitTest'::character varying"
+          },
+          {
+            "name": "Description",
+            "dbName": "description",
+            "edmType": "Edm.String",
+            "jdbcType": "Types.VARCHAR",
+            "dbType": "varchar",
+            "nullable": true,
+            "maxLength": 250,
+            "dbDefault": "'Binary UnitTest table.'::character varying"
+          },
+          {
+            "name": "Binary1",
+            "dbName": "binary1",
+            "edmType": "Edm.Binary",
+            "jdbcType": "Types.BINARY",
+            "dbType": "bytea",
+            "jdbcStream": true,
+            "nullable": true
+          },
+          {
+            "name": "VarBinary1",
+            "dbName": "varbinary1",
+            "edmType": "Edm.Binary",
+            "jdbcType": "Types.BINARY",
+            "dbType": "bytea",
+            "jdbcStream": true,
+            "nullable": true
+          },
+          {
+            "name": "LongVarBinary1",
+            "dbName": "longvarbinary1",
+            "edmType": "Edm.Binary",
+            "jdbcType": "Types.BINARY",
+            "dbType": "bytea",
+            "jdbcStream": true,
+            "nullable": true
+          },
+          {
+            "name": "Blob1",
+            "dbName": "blob1",
+            "edmType": "Edm.Binary",
+            "jdbcType": "Types.BINARY",
+            "dbType": "bytea",
+            "jdbcStream": true,
+            "nullable": true
+          }
+        ]
+      }
+    },
+    {
+      "name": "ODataTest7",
+      "description": "Description.",
+      "dbSettingName": "postgres1",
+      "canCreate": true,
+      "canRead": true,
+      "canUpdate": true,
+      "canDelete": true,
+      "entityType": {
+        "name": "ODataTest7",
+        "dbName": "odatatest7",
+        "keyName": ["ID"],
+        "property": [
+          {
+            "name": "ID",
+            "dbName": "id",
+            "edmType": "Edm.Int32",
+            "jdbcType": "Types.INTEGER",
+            "dbType": "int4",
+            "nullable": false
+          },
+          {
+            "name": "Name",
+            "dbName": "name",
+            "edmType": "Edm.String",
+            "jdbcType": "Types.VARCHAR",
+            "dbType": "varchar",
+            "nullable": true,
+            "maxLength": 80,
+            "dbDefault": "'UUID UnitTest'::character varying"
+          },
+          {
+            "name": "Description",
+            "dbName": "description",
+            "edmType": "Edm.String",
+            "jdbcType": "Types.VARCHAR",
+            "dbType": "varchar",
+            "nullable": true,
+            "maxLength": 250,
+            "dbDefault": "'UUID UnitTest table.'::character varying"
+          },
+          {
+            "name": "Uuid1",
+            "dbName": "uuid1",
+            "edmType": "Edm.Binary",
+            "jdbcType": "Types.BINARY",
+            "dbType": "uuid",
+            "nullable": true,
+            "dbDefault": "gen_random_uuid()"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ODataTest8",
+      "description": "Description.",
+      "dbSettingName": "postgres1",
+      "canCreate": true,
+      "canRead": true,
+      "canUpdate": true,
+      "canDelete": true,
+      "entityType": {
+        "name": "ODataTest8",
+        "dbName": "ODataTest8",
+        "keyName": ["MainKey"],
+        "property": [
+          {
+            "name": "MainKey",
+            "dbName": "MainKey",
+            "edmType": "Edm.String",
+            "jdbcType": "Types.VARCHAR",
+            "dbType": "VARCHAR",
+            "nullable": false,
+            "maxLength": 20
+          },
+          {
+            "name": "Description",
+            "dbName": "Description",
+            "edmType": "Edm.String",
+            "jdbcType": "Types.VARCHAR",
+            "dbType": "VARCHAR",
+            "nullable": true,
+            "maxLength": 250,
+            "dbDefault": "'Main table'"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ODataTest8Sub",
+      "description": "Description.",
+      "dbSettingName": "postgres1",
+      "canCreate": true,
+      "canRead": true,
+      "canUpdate": true,
+      "canDelete": true,
+      "entityType": {
+        "name": "ODataTest8Sub",
+        "dbName": "ODataTest8Sub",
+        "keyName": ["MainKey", "SubKey"],
+        "property": [
+          {
+            "name": "MainKey",
+            "dbName": "MainKey",
+            "edmType": "Edm.String",
+            "jdbcType": "Types.VARCHAR",
+            "dbType": "VARCHAR",
+            "nullable": false,
+            "maxLength": 20
+          },
+          {
+            "name": "SubKey",
+            "dbName": "SubKey",
+            "edmType": "Edm.String",
+            "jdbcType": "Types.VARCHAR",
+            "dbType": "VARCHAR",
+            "nullable": false,
+            "maxLength": 20
+          },
+          {
+            "name": "Description",
+            "dbName": "Description",
+            "edmType": "Edm.String",
+            "jdbcType": "Types.VARCHAR",
+            "dbType": "VARCHAR",
+            "nullable": true,
+            "maxLength": 250,
+            "dbDefault": "'Sub table'"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ODataTest8SubSub",
+      "description": "Description.",
+      "dbSettingName": "postgres1",
+      "canCreate": true,
+      "canRead": true,
+      "canUpdate": true,
+      "canDelete": true,
+      "entityType": {
+        "name": "ODataTest8SubSub",
+        "dbName": "ODataTest8SubSub",
+        "keyName": ["MainKey", "SubKey", "SubSubKey"],
+        "property": [
+          {
+            "name": "MainKey",
+            "dbName": "MainKey",
+            "edmType": "Edm.String",
+            "jdbcType": "Types.VARCHAR",
+            "dbType": "VARCHAR",
+            "nullable": false,
+            "maxLength": 20
+          },
+          {
+            "name": "SubKey",
+            "dbName": "SubKey",
+            "edmType": "Edm.String",
+            "jdbcType": "Types.VARCHAR",
+            "dbType": "VARCHAR",
+            "nullable": false,
+            "maxLength": 20
+          },
+          {
+            "name": "SubSubKey",
+            "dbName": "SubSubKey",
+            "edmType": "Edm.String",
+            "jdbcType": "Types.VARCHAR",
+            "dbType": "VARCHAR",
+            "nullable": false,
+            "maxLength": 20
+          },
+          {
+            "name": "Description",
+            "dbName": "Description",
+            "edmType": "Edm.String",
+            "jdbcType": "Types.VARCHAR",
+            "dbType": "VARCHAR",
+            "nullable": true,
+            "maxLength": 250,
+            "dbDefault": "'Sub sub table'"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ODataTest9",
+      "description": "Description.",
+      "dbSettingName": "postgres1",
+      "canCreate": true,
+      "canRead": true,
+      "canUpdate": true,
+      "canDelete": true,
+      "omitCountAll": false,
+      "jdbcStmtTimeout": 30,
+      "entityType": {
+        "name": "ODataTest9",
+        "dbName": "ODataTest9",
+        "keyName": ["Name", "Description"],
+        "property": [
+          {
+            "name": "Name",
+            "dbName": "Name",
+            "edmType": "Edm.String",
+            "jdbcType": "Types.VARCHAR",
+            "dbType": "VARCHAR",
+            "nullable": true,
+            "maxLength": 80,
+            "dbDefault": "'Ubnormal test case. Without Primary Key.'",
+            "filterTreatNullAsBlank": true
+          },
+          {
+            "name": "Description",
+            "dbName": "Description",
+            "edmType": "Edm.String",
+            "jdbcType": "Types.VARCHAR",
+            "dbType": "VARCHAR",
+            "nullable": true,
+            "maxLength": 250,
+            "dbDefault": "'Ubnormal test case. Without Primary Key.'",
+            "filterTreatNullAsBlank": true
+          }
+        ]
+      }
+    },
+    {
+      "name": "SklActors",
+      "description": "Description.",
+      "dbSettingName": "postgres1",
+      "canCreate": true,
+      "canRead": true,
+      "canUpdate": true,
+      "canDelete": true,
+      "entityType": {
+        "name": "SklActor",
+        "dbName": "actor",
+        "keyName": ["actor_id"],
+        "property": [
+          {
+            "name": "actor_id",
+            "dbName": "actor_id",
+            "edmType": "Edm.Int32",
+            "jdbcType": "Types.INTEGER",
+            "dbType": "serial",
+            "autoGenKey": true,
+            "nullable": true
+          },
+          {
+            "name": "first_name",
+            "dbName": "first_name",
+            "edmType": "Edm.String",
+            "jdbcType": "Types.VARCHAR",
+            "dbType": "varchar",
+            "nullable": false,
+            "maxLength": 45
+          },
+          {
+            "name": "last_name",
+            "dbName": "last_name",
+            "edmType": "Edm.String",
+            "jdbcType": "Types.VARCHAR",
+            "dbType": "varchar",
+            "nullable": false,
+            "maxLength": 45
+          },
+          {
+            "name": "last_update",
+            "dbName": "last_update",
+            "edmType": "Edm.DateTimeOffset",
+            "jdbcType": "Types.TIMESTAMP",
+            "dbType": "timestamp",
+            "nullable": false,
+            "dbDefault": "now()"
+          }
+        ]
+      }
+    },
+    {
+      "name": "SklActorInfos",
+      "description": "Description.",
+      "dbSettingName": "postgres1",
+      "canCreate": true,
+      "canRead": true,
+      "canUpdate": true,
+      "canDelete": true,
+      "entityType": {
+        "name": "SklActorInfo",
+        "dbName": "actor_info",
+        "keyName": ["actor_id"],
+        "property": [
+          {
+            "name": "actor_id",
+            "dbName": "actor_id",
+            "edmType": "Edm.Int32",
+            "jdbcType": "Types.INTEGER",
+            "dbType": "int4",
+            "nullable": true
+          },
+          {
+            "name": "first_name",
+            "dbName": "first_name",
+            "edmType": "Edm.String",
+            "jdbcType": "Types.VARCHAR",
+            "dbType": "varchar",
+            "nullable": true,
+            "maxLength": 45
+          },
+          {
+            "name": "last_name",
+            "dbName": "last_name",
+            "edmType": "Edm.String",
+            "jdbcType": "Types.VARCHAR",
+            "dbType": "varchar",
+            "nullable": true,
+            "maxLength": 45
+          },
+          {
+            "name": "film_info",
+            "dbName": "film_info",
+            "edmType": "Edm.String",
+            "jdbcType": "Types.VARCHAR",
+            "dbType": "text",
+            "jdbcStream": true,
+            "nullable": true
+          }
+        ]
+      }
+    },
+    {
+      "name": "SklAddresses",
+      "description": "Description.",
+      "dbSettingName": "postgres1",
+      "canCreate": true,
+      "canRead": true,
+      "canUpdate": true,
+      "canDelete": true,
+      "entityType": {
+        "name": "SklAddress",
+        "dbName": "address",
+        "keyName": ["address_id"],
+        "property": [
+          {
+            "name": "address_id",
+            "dbName": "address_id",
+            "edmType": "Edm.Int32",
+            "jdbcType": "Types.INTEGER",
+            "dbType": "serial",
+            "autoGenKey": true,
+            "nullable": true
+          },
+          {
+            "name": "address",
+            "dbName": "address",
+            "edmType": "Edm.String",
+            "jdbcType": "Types.VARCHAR",
+            "dbType": "varchar",
+            "nullable": false,
+            "maxLength": 50
+          },
+          {
+            "name": "address2",
+            "dbName": "address2",
+            "edmType": "Edm.String",
+            "jdbcType": "Types.VARCHAR",
+            "dbType": "varchar",
+            "nullable": true,
+            "maxLength": 50
+          },
+          {
+            "name": "district",
+            "dbName": "district",
+            "edmType": "Edm.String",
+            "jdbcType": "Types.VARCHAR",
+            "dbType": "varchar",
+            "nullable": false,
+            "maxLength": 20
+          },
+          {
+            "name": "city_id",
+            "dbName": "city_id",
+            "edmType": "Edm.Int16",
+            "jdbcType": "Types.SMALLINT",
+            "dbType": "int2",
+            "nullable": false
+          },
+          {
+            "name": "postal_code",
+            "dbName": "postal_code",
+            "edmType": "Edm.String",
+            "jdbcType": "Types.VARCHAR",
+            "dbType": "varchar",
+            "nullable": true,
+            "maxLength": 10
+          },
+          {
+            "name": "phone",
+            "dbName": "phone",
+            "edmType": "Edm.String",
+            "jdbcType": "Types.VARCHAR",
+            "dbType": "varchar",
+            "nullable": false,
+            "maxLength": 20
+          },
+          {
+            "name": "last_update",
+            "dbName": "last_update",
+            "edmType": "Edm.DateTimeOffset",
+            "jdbcType": "Types.TIMESTAMP",
+            "dbType": "timestamp",
+            "nullable": false,
+            "dbDefault": "now()"
+          }
+        ]
+      }
+    },
+    {
+      "name": "SklCategories",
+      "description": "Description.",
+      "dbSettingName": "postgres1",
+      "canCreate": true,
+      "canRead": true,
+      "canUpdate": true,
+      "canDelete": true,
+      "entityType": {
+        "name": "SklCategory",
+        "dbName": "category",
+        "keyName": ["category_id"],
+        "property": [
+          {
+            "name": "category_id",
+            "dbName": "category_id",
+            "edmType": "Edm.Int32",
+            "jdbcType": "Types.INTEGER",
+            "dbType": "serial",
+            "autoGenKey": true,
+            "nullable": true
+          },
+          {
+            "name": "name",
+            "dbName": "name",
+            "edmType": "Edm.String",
+            "jdbcType": "Types.VARCHAR",
+            "dbType": "varchar",
+            "nullable": false,
+            "maxLength": 25
+          },
+          {
+            "name": "last_update",
+            "dbName": "last_update",
+            "edmType": "Edm.DateTimeOffset",
+            "jdbcType": "Types.TIMESTAMP",
+            "dbType": "timestamp",
+            "nullable": false,
+            "dbDefault": "now()"
+          }
+        ]
+      }
+    },
+    {
+      "name": "SklCities",
+      "description": "Description.",
+      "dbSettingName": "postgres1",
+      "canCreate": true,
+      "canRead": true,
+      "canUpdate": true,
+      "canDelete": true,
+      "entityType": {
+        "name": "SklCity",
+        "dbName": "city",
+        "keyName": ["city_id"],
+        "property": [
+          {
+            "name": "city_id",
+            "dbName": "city_id",
+            "edmType": "Edm.Int32",
+            "jdbcType": "Types.INTEGER",
+            "dbType": "serial",
+            "autoGenKey": true,
+            "nullable": true
+          },
+          {
+            "name": "city",
+            "dbName": "city",
+            "edmType": "Edm.String",
+            "jdbcType": "Types.VARCHAR",
+            "dbType": "varchar",
+            "nullable": false,
+            "maxLength": 50
+          },
+          {
+            "name": "country_id",
+            "dbName": "country_id",
+            "edmType": "Edm.Int16",
+            "jdbcType": "Types.SMALLINT",
+            "dbType": "int2",
+            "nullable": false
+          },
+          {
+            "name": "last_update",
+            "dbName": "last_update",
+            "edmType": "Edm.DateTimeOffset",
+            "jdbcType": "Types.TIMESTAMP",
+            "dbType": "timestamp",
+            "nullable": false,
+            "dbDefault": "now()"
+          }
+        ]
+      }
+    },
+    {
+      "name": "SklCountries",
+      "description": "Description.",
+      "dbSettingName": "postgres1",
+      "canCreate": true,
+      "canRead": true,
+      "canUpdate": true,
+      "canDelete": true,
+      "entityType": {
+        "name": "SklCountry",
+        "dbName": "country",
+        "keyName": ["country_id"],
+        "property": [
+          {
+            "name": "country_id",
+            "dbName": "country_id",
+            "edmType": "Edm.Int32",
+            "jdbcType": "Types.INTEGER",
+            "dbType": "serial",
+            "autoGenKey": true,
+            "nullable": true
+          },
+          {
+            "name": "country",
+            "dbName": "country",
+            "edmType": "Edm.String",
+            "jdbcType": "Types.VARCHAR",
+            "dbType": "varchar",
+            "nullable": false,
+            "maxLength": 50
+          },
+          {
+            "name": "last_update",
+            "dbName": "last_update",
+            "edmType": "Edm.DateTimeOffset",
+            "jdbcType": "Types.TIMESTAMP",
+            "dbType": "timestamp",
+            "nullable": false,
+            "dbDefault": "now()"
+          }
+        ]
+      }
+    },
+    {
+      "name": "SklCustomers",
+      "description": "Description.",
+      "dbSettingName": "postgres1",
+      "canCreate": true,
+      "canRead": true,
+      "canUpdate": true,
+      "canDelete": true,
+      "entityType": {
+        "name": "SklCustomer",
+        "dbName": "customer",
+        "keyName": ["customer_id"],
+        "property": [
+          {
+            "name": "customer_id",
+            "dbName": "customer_id",
+            "edmType": "Edm.Int32",
+            "jdbcType": "Types.INTEGER",
+            "dbType": "serial",
+            "autoGenKey": true,
+            "nullable": true
+          },
+          {
+            "name": "store_id",
+            "dbName": "store_id",
+            "edmType": "Edm.Int16",
+            "jdbcType": "Types.SMALLINT",
+            "dbType": "int2",
+            "nullable": false
+          },
+          {
+            "name": "first_name",
+            "dbName": "first_name",
+            "edmType": "Edm.String",
+            "jdbcType": "Types.VARCHAR",
+            "dbType": "varchar",
+            "nullable": false,
+            "maxLength": 45
+          },
+          {
+            "name": "last_name",
+            "dbName": "last_name",
+            "edmType": "Edm.String",
+            "jdbcType": "Types.VARCHAR",
+            "dbType": "varchar",
+            "nullable": false,
+            "maxLength": 45
+          },
+          {
+            "name": "email",
+            "dbName": "email",
+            "edmType": "Edm.String",
+            "jdbcType": "Types.VARCHAR",
+            "dbType": "varchar",
+            "nullable": true,
+            "maxLength": 50
+          },
+          {
+            "name": "address_id",
+            "dbName": "address_id",
+            "edmType": "Edm.Int16",
+            "jdbcType": "Types.SMALLINT",
+            "dbType": "int2",
+            "nullable": false
+          },
+          {
+            "name": "activebool",
+            "dbName": "activebool",
+            "edmType": "Edm.Boolean",
+            "jdbcType": "Types.BIT",
+            "dbType": "bool",
+            "nullable": false,
+            "dbDefault": "true"
+          },
+          {
+            "name": "create_date",
+            "dbName": "create_date",
+            "edmType": "Edm.Date",
+            "jdbcType": "Types.DATE",
+            "dbType": "date",
+            "nullable": false,
+            "dbDefault": "('now'::text)::date"
+          },
+          {
+            "name": "last_update",
+            "dbName": "last_update",
+            "edmType": "Edm.DateTimeOffset",
+            "jdbcType": "Types.TIMESTAMP",
+            "dbType": "timestamp",
+            "nullable": true,
+            "dbDefault": "now()"
+          },
+          {
+            "name": "active",
+            "dbName": "active",
+            "edmType": "Edm.Int32",
+            "jdbcType": "Types.INTEGER",
+            "dbType": "int4",
+            "nullable": true
+          }
+        ]
+      }
+    },
+    {
+      "name": "SklCustomerLists",
+      "description": "Description.",
+      "dbSettingName": "postgres1",
+      "canCreate": true,
+      "canRead": true,
+      "canUpdate": true,
+      "canDelete": true,
+      "entityType": {
+        "name": "SklCustomerList",
+        "dbName": "customer_list",
+        "keyName": ["id"],
+        "property": [
+          {
+            "name": "id",
+            "dbName": "id",
+            "edmType": "Edm.Int32",
+            "jdbcType": "Types.INTEGER",
+            "dbType": "int4",
+            "nullable": true
+          },
+          {
+            "name": "name",
+            "dbName": "name",
+            "edmType": "Edm.String",
+            "jdbcType": "Types.VARCHAR",
+            "dbType": "text",
+            "jdbcStream": true,
+            "nullable": true
+          },
+          {
+            "name": "address",
+            "dbName": "address",
+            "edmType": "Edm.String",
+            "jdbcType": "Types.VARCHAR",
+            "dbType": "varchar",
+            "nullable": true,
+            "maxLength": 50
+          },
+          {
+            "name": "zip_code",
+            "dbName": "zip code",
+            "edmType": "Edm.String",
+            "jdbcType": "Types.VARCHAR",
+            "dbType": "varchar",
+            "nullable": true,
+            "maxLength": 10
+          },
+          {
+            "name": "phone",
+            "dbName": "phone",
+            "edmType": "Edm.String",
+            "jdbcType": "Types.VARCHAR",
+            "dbType": "varchar",
+            "nullable": true,
+            "maxLength": 20
+          },
+          {
+            "name": "city",
+            "dbName": "city",
+            "edmType": "Edm.String",
+            "jdbcType": "Types.VARCHAR",
+            "dbType": "varchar",
+            "nullable": true,
+            "maxLength": 50
+          },
+          {
+            "name": "country",
+            "dbName": "country",
+            "edmType": "Edm.String",
+            "jdbcType": "Types.VARCHAR",
+            "dbType": "varchar",
+            "nullable": true,
+            "maxLength": 50
+          },
+          {
+            "name": "notes",
+            "dbName": "notes",
+            "edmType": "Edm.String",
+            "jdbcType": "Types.VARCHAR",
+            "dbType": "text",
+            "jdbcStream": true,
+            "nullable": true
+          },
+          {
+            "name": "sid",
+            "dbName": "sid",
+            "edmType": "Edm.Int16",
+            "jdbcType": "Types.SMALLINT",
+            "dbType": "int2",
+            "nullable": true
+          }
+        ]
+      }
+    },
+    {
+      "name": "SklFilms",
+      "description": "Description.",
+      "dbSettingName": "postgres1",
+      "canCreate": true,
+      "canRead": true,
+      "canUpdate": true,
+      "canDelete": true,
+      "entityType": {
+        "name": "SklFilm",
+        "dbName": "film",
+        "keyName": ["film_id"],
+        "property": [
+          {
+            "name": "film_id",
+            "dbName": "film_id",
+            "edmType": "Edm.Int32",
+            "jdbcType": "Types.INTEGER",
+            "dbType": "serial",
+            "autoGenKey": true,
+            "nullable": true
+          },
+          {
+            "name": "title",
+            "dbName": "title",
+            "edmType": "Edm.String",
+            "jdbcType": "Types.VARCHAR",
+            "dbType": "varchar",
+            "nullable": false,
+            "maxLength": 255
+          },
+          {
+            "name": "description",
+            "dbName": "description",
+            "edmType": "Edm.String",
+            "jdbcType": "Types.VARCHAR",
+            "dbType": "text",
+            "jdbcStream": true,
+            "nullable": true
+          },
+          {
+            "name": "release_year",
+            "dbName": "release_year",
+            "edmType": "Edm.Int32",
+            "jdbcType": "Types.INTEGER",
+            "dbType": "int4",
+            "nullable": true
+          },
+          {
+            "name": "language_id",
+            "dbName": "language_id",
+            "edmType": "Edm.Int16",
+            "jdbcType": "Types.SMALLINT",
+            "dbType": "int2",
+            "nullable": false
+          },
+          {
+            "name": "rental_duration",
+            "dbName": "rental_duration",
+            "edmType": "Edm.Int16",
+            "jdbcType": "Types.SMALLINT",
+            "dbType": "int2",
+            "nullable": false,
+            "dbDefault": "3"
+          },
+          {
+            "name": "rental_rate",
+            "dbName": "rental_rate",
+            "edmType": "Edm.Decimal",
+            "jdbcType": "Types.NUMERIC",
+            "dbType": "numeric",
+            "nullable": false,
+            "precision": 4,
+            "scale": 2,
+            "dbDefault": "4.99"
+          },
+          {
+            "name": "length",
+            "dbName": "length",
+            "edmType": "Edm.Int16",
+            "jdbcType": "Types.SMALLINT",
+            "dbType": "int2",
+            "nullable": true
+          },
+          {
+            "name": "replacement_cost",
+            "dbName": "replacement_cost",
+            "edmType": "Edm.Decimal",
+            "jdbcType": "Types.NUMERIC",
+            "dbType": "numeric",
+            "nullable": false,
+            "precision": 5,
+            "scale": 2,
+            "dbDefault": "19.99"
+          },
+          {
+            "name": "rating",
+            "dbName": "rating",
+            "edmType": "Edm.String",
+            "jdbcType": "Types.VARCHAR",
+            "dbType": "mpaa_rating",
+            "nullable": true,
+            "dbDefault": "'G'::mpaa_rating"
+          },
+          {
+            "name": "last_update",
+            "dbName": "last_update",
+            "edmType": "Edm.DateTimeOffset",
+            "jdbcType": "Types.TIMESTAMP",
+            "dbType": "timestamp",
+            "nullable": false,
+            "dbDefault": "now()"
+          },
+          {
+            "name": "special_features",
+            "dbName": "special_features",
+            "edmType": "Edm.String",
+            "jdbcType": "Types.ARRAY",
+            "dbType": "_text",
+            "nullable": true
+          },
+          {
+            "name": "fulltext",
+            "dbName": "fulltext",
+            "edmType": "Edm.String",
+            "jdbcType": "Types.OTHER",
+            "dbType": "tsvector",
+            "nullable": false
+          }
+        ]
+      }
+    },    
+    {
+      "name": "SklFilmActors",
+      "description": "Description.",
+      "dbSettingName": "postgres1",
+      "canCreate": true,
+      "canRead": true,
+      "canUpdate": true,
+      "canDelete": true,
+      "entityType": {
+        "name": "SklFilmActor",
+        "dbName": "film_actor",
+        "keyName": ["actor_id", "film_id"],
+        "property": [
+          {
+            "name": "actor_id",
+            "dbName": "actor_id",
+            "edmType": "Edm.Int16",
+            "jdbcType": "Types.SMALLINT",
+            "dbType": "int2",
+            "nullable": false
+          },
+          {
+            "name": "film_id",
+            "dbName": "film_id",
+            "edmType": "Edm.Int16",
+            "jdbcType": "Types.SMALLINT",
+            "dbType": "int2",
+            "nullable": false
+          },
+          {
+            "name": "last_update",
+            "dbName": "last_update",
+            "edmType": "Edm.DateTimeOffset",
+            "jdbcType": "Types.TIMESTAMP",
+            "dbType": "timestamp",
+            "nullable": false,
+            "dbDefault": "now()"
+          }
+        ]
+      }
+    },
+    {
+      "name": "SklFilmCategories",
+      "description": "Description.",
+      "dbSettingName": "postgres1",
+      "canCreate": true,
+      "canRead": true,
+      "canUpdate": true,
+      "canDelete": true,
+      "entityType": {
+        "name": "SklFilmCategory",
+        "dbName": "film_category",
+        "keyName": ["film_id", "category_id"],
+        "property": [
+          {
+            "name": "film_id",
+            "dbName": "film_id",
+            "edmType": "Edm.Int16",
+            "jdbcType": "Types.SMALLINT",
+            "dbType": "int2",
+            "nullable": false
+          },
+          {
+            "name": "category_id",
+            "dbName": "category_id",
+            "edmType": "Edm.Int16",
+            "jdbcType": "Types.SMALLINT",
+            "dbType": "int2",
+            "nullable": false
+          },
+          {
+            "name": "last_update",
+            "dbName": "last_update",
+            "edmType": "Edm.DateTimeOffset",
+            "jdbcType": "Types.TIMESTAMP",
+            "dbType": "timestamp",
+            "nullable": false,
+            "dbDefault": "now()"
+          }
+        ]
+      }
+    },
+    {
+      "name": "SklFilmLists",
+      "description": "Description.",
+      "dbSettingName": "postgres1",
+      "canCreate": true,
+      "canRead": true,
+      "canUpdate": true,
+      "canDelete": true,
+      "entityType": {
+        "name": "SklFilmList",
+        "dbName": "film_list",
+        "keyName": ["fid"],
+        "property": [
+          {
+            "name": "fid",
+            "dbName": "fid",
+            "edmType": "Edm.Int32",
+            "jdbcType": "Types.INTEGER",
+            "dbType": "int4",
+            "nullable": true
+          },
+          {
+            "name": "title",
+            "dbName": "title",
+            "edmType": "Edm.String",
+            "jdbcType": "Types.VARCHAR",
+            "dbType": "varchar",
+            "nullable": true,
+            "maxLength": 255
+          },
+          {
+            "name": "description",
+            "dbName": "description",
+            "edmType": "Edm.String",
+            "jdbcType": "Types.VARCHAR",
+            "dbType": "text",
+            "jdbcStream": true,
+            "nullable": true
+          },
+          {
+            "name": "category",
+            "dbName": "category",
+            "edmType": "Edm.String",
+            "jdbcType": "Types.VARCHAR",
+            "dbType": "varchar",
+            "nullable": true,
+            "maxLength": 25
+          },
+          {
+            "name": "price",
+            "dbName": "price",
+            "edmType": "Edm.Decimal",
+            "jdbcType": "Types.NUMERIC",
+            "dbType": "numeric",
+            "nullable": true,
+            "precision": 4,
+            "scale": 2
+          },
+          {
+            "name": "length",
+            "dbName": "length",
+            "edmType": "Edm.Int16",
+            "jdbcType": "Types.SMALLINT",
+            "dbType": "int2",
+            "nullable": true
+          },
+          {
+            "name": "rating",
+            "dbName": "rating",
+            "edmType": "Edm.String",
+            "jdbcType": "Types.VARCHAR",
+            "dbType": "mpaa_rating",
+            "nullable": true
+          },
+          {
+            "name": "actors",
+            "dbName": "actors",
+            "edmType": "Edm.String",
+            "jdbcType": "Types.VARCHAR",
+            "dbType": "text",
+            "jdbcStream": true,
+            "nullable": true
+          }
+        ]
+      }
+    },
+    {
+      "name": "SklInventories",
+      "description": "Description.",
+      "dbSettingName": "postgres1",
+      "canCreate": true,
+      "canRead": true,
+      "canUpdate": true,
+      "canDelete": true,
+      "entityType": {
+        "name": "SklInventory",
+        "dbName": "inventory",
+        "keyName": ["inventory_id"],
+        "property": [
+          {
+            "name": "inventory_id",
+            "dbName": "inventory_id",
+            "edmType": "Edm.Int32",
+            "jdbcType": "Types.INTEGER",
+            "dbType": "serial",
+            "autoGenKey": true,
+            "nullable": true
+          },
+          {
+            "name": "film_id",
+            "dbName": "film_id",
+            "edmType": "Edm.Int16",
+            "jdbcType": "Types.SMALLINT",
+            "dbType": "int2",
+            "nullable": false
+          },
+          {
+            "name": "store_id",
+            "dbName": "store_id",
+            "edmType": "Edm.Int16",
+            "jdbcType": "Types.SMALLINT",
+            "dbType": "int2",
+            "nullable": false
+          },
+          {
+            "name": "last_update",
+            "dbName": "last_update",
+            "edmType": "Edm.DateTimeOffset",
+            "jdbcType": "Types.TIMESTAMP",
+            "dbType": "timestamp",
+            "nullable": false,
+            "dbDefault": "now()"
+          }
+        ]
+      }
+    },
+    {
+      "name": "SklLanguages",
+      "description": "Description.",
+      "dbSettingName": "postgres1",
+      "canCreate": true,
+      "canRead": true,
+      "canUpdate": true,
+      "canDelete": true,
+      "entityType": {
+        "name": "SklLanguage",
+        "dbName": "language",
+        "keyName": ["language_id"],
+        "property": [
+          {
+            "name": "language_id",
+            "dbName": "language_id",
+            "edmType": "Edm.Int32",
+            "jdbcType": "Types.INTEGER",
+            "dbType": "serial",
+            "autoGenKey": true,
+            "nullable": true
+          },
+          {
+            "name": "name",
+            "dbName": "name",
+            "edmType": "Edm.String",
+            "jdbcType": "Types.CHAR",
+            "dbType": "bpchar",
+            "nullable": false,
+            "maxLength": 20,
+            "lengthFixed": true
+          },
+          {
+            "name": "last_update",
+            "dbName": "last_update",
+            "edmType": "Edm.DateTimeOffset",
+            "jdbcType": "Types.TIMESTAMP",
+            "dbType": "timestamp",
+            "nullable": false,
+            "dbDefault": "now()"
+          }
+        ]
+      }
+    },
+    {
+      "name": "SklNicerButSlowerFilmLists",
+      "description": "Description.",
+      "dbSettingName": "postgres1",
+      "canCreate": true,
+      "canRead": true,
+      "canUpdate": true,
+      "canDelete": true,
+      "entityType": {
+        "name": "SklNicerButSlowerFilmList",
+        "dbName": "nicer_but_slower_film_list",
+        "keyName": ["fid"],
+        "property": [
+          {
+            "name": "fid",
+            "dbName": "fid",
+            "edmType": "Edm.Int32",
+            "jdbcType": "Types.INTEGER",
+            "dbType": "int4",
+            "nullable": true
+          },
+          {
+            "name": "title",
+            "dbName": "title",
+            "edmType": "Edm.String",
+            "jdbcType": "Types.VARCHAR",
+            "dbType": "varchar",
+            "nullable": true,
+            "maxLength": 255
+          },
+          {
+            "name": "description",
+            "dbName": "description",
+            "edmType": "Edm.String",
+            "jdbcType": "Types.VARCHAR",
+            "dbType": "text",
+            "jdbcStream": true,
+            "nullable": true
+          },
+          {
+            "name": "category",
+            "dbName": "category",
+            "edmType": "Edm.String",
+            "jdbcType": "Types.VARCHAR",
+            "dbType": "varchar",
+            "nullable": true,
+            "maxLength": 25
+          },
+          {
+            "name": "price",
+            "dbName": "price",
+            "edmType": "Edm.Decimal",
+            "jdbcType": "Types.NUMERIC",
+            "dbType": "numeric",
+            "nullable": true,
+            "precision": 4,
+            "scale": 2
+          },
+          {
+            "name": "length",
+            "dbName": "length",
+            "edmType": "Edm.Int16",
+            "jdbcType": "Types.SMALLINT",
+            "dbType": "int2",
+            "nullable": true
+          },
+          {
+            "name": "rating",
+            "dbName": "rating",
+            "edmType": "Edm.String",
+            "jdbcType": "Types.VARCHAR",
+            "dbType": "mpaa_rating",
+            "nullable": true
+          },
+          {
+            "name": "actors",
+            "dbName": "actors",
+            "edmType": "Edm.String",
+            "jdbcType": "Types.VARCHAR",
+            "dbType": "text",
+            "jdbcStream": true,
+            "nullable": true
+          }
+        ]
+      }
+    },
+    {
+      "name": "SklPayments",
+      "description": "Description.",
+      "dbSettingName": "postgres1",
+      "canCreate": true,
+      "canRead": true,
+      "canUpdate": true,
+      "canDelete": true,
+      "entityType": {
+        "name": "SklPayment",
+        "dbName": "payment",
+        "keyName": ["payment_id"],
+        "property": [
+          {
+            "name": "payment_id",
+            "dbName": "payment_id",
+            "edmType": "Edm.Int32",
+            "jdbcType": "Types.INTEGER",
+            "dbType": "serial",
+            "autoGenKey": true,
+            "nullable": true
+          },
+          {
+            "name": "customer_id",
+            "dbName": "customer_id",
+            "edmType": "Edm.Int16",
+            "jdbcType": "Types.SMALLINT",
+            "dbType": "int2",
+            "nullable": false
+          },
+          {
+            "name": "staff_id",
+            "dbName": "staff_id",
+            "edmType": "Edm.Int16",
+            "jdbcType": "Types.SMALLINT",
+            "dbType": "int2",
+            "nullable": false
+          },
+          {
+            "name": "rental_id",
+            "dbName": "rental_id",
+            "edmType": "Edm.Int32",
+            "jdbcType": "Types.INTEGER",
+            "dbType": "int4",
+            "nullable": false
+          },
+          {
+            "name": "amount",
+            "dbName": "amount",
+            "edmType": "Edm.Decimal",
+            "jdbcType": "Types.NUMERIC",
+            "dbType": "numeric",
+            "nullable": false,
+            "precision": 5,
+            "scale": 2
+          },
+          {
+            "name": "payment_date",
+            "dbName": "payment_date",
+            "edmType": "Edm.DateTimeOffset",
+            "jdbcType": "Types.TIMESTAMP",
+            "dbType": "timestamp",
+            "nullable": false
+          }
+        ]
+      }
+    },
+    {
+      "name": "SklRentals",
+      "description": "Description.",
+      "dbSettingName": "postgres1",
+      "canCreate": true,
+      "canRead": true,
+      "canUpdate": true,
+      "canDelete": true,
+      "entityType": {
+        "name": "SklRental",
+        "dbName": "rental",
+        "keyName": ["rental_id"],
+        "property": [
+          {
+            "name": "rental_id",
+            "dbName": "rental_id",
+            "edmType": "Edm.Int32",
+            "jdbcType": "Types.INTEGER",
+            "dbType": "serial",
+            "autoGenKey": true,
+            "nullable": true
+          },
+          {
+            "name": "rental_date",
+            "dbName": "rental_date",
+            "edmType": "Edm.DateTimeOffset",
+            "jdbcType": "Types.TIMESTAMP",
+            "dbType": "timestamp",
+            "nullable": false
+          },
+          {
+            "name": "inventory_id",
+            "dbName": "inventory_id",
+            "edmType": "Edm.Int32",
+            "jdbcType": "Types.INTEGER",
+            "dbType": "int4",
+            "nullable": false
+          },
+          {
+            "name": "customer_id",
+            "dbName": "customer_id",
+            "edmType": "Edm.Int16",
+            "jdbcType": "Types.SMALLINT",
+            "dbType": "int2",
+            "nullable": false
+          },
+          {
+            "name": "return_date",
+            "dbName": "return_date",
+            "edmType": "Edm.DateTimeOffset",
+            "jdbcType": "Types.TIMESTAMP",
+            "dbType": "timestamp",
+            "nullable": true
+          },
+          {
+            "name": "staff_id",
+            "dbName": "staff_id",
+            "edmType": "Edm.Int16",
+            "jdbcType": "Types.SMALLINT",
+            "dbType": "int2",
+            "nullable": false
+          },
+          {
+            "name": "last_update",
+            "dbName": "last_update",
+            "edmType": "Edm.DateTimeOffset",
+            "jdbcType": "Types.TIMESTAMP",
+            "dbType": "timestamp",
+            "nullable": false,
+            "dbDefault": "now()"
+          }
+        ]
+      }
+    },
+    {
+      "name": "SklSalesByFilmCategories",
+      "description": "Description.",
+      "dbSettingName": "postgres1",
+      "canCreate": true,
+      "canRead": true,
+      "canUpdate": true,
+      "canDelete": true,
+      "entityType": {
+        "name": "SklSalesByFilmCategory",
+        "dbName": "sales_by_film_category",
+        "keyName": ["category"],
+        "property": [
+          {
+            "name": "category",
+            "dbName": "category",
+            "edmType": "Edm.String",
+            "jdbcType": "Types.VARCHAR",
+            "dbType": "varchar",
+            "nullable": true,
+            "maxLength": 25
+          },
+          {
+            "name": "total_sales",
+            "dbName": "total_sales",
+            "edmType": "Edm.Decimal",
+            "jdbcType": "Types.NUMERIC",
+            "dbType": "numeric",
+            "precision": 12,
+            "scale": 2,
+            "nullable": true
+          }
+        ]
+      }
+    },
+    {
+      "name": "SklSalesByStores",
+      "description": "Description.",
+      "dbSettingName": "postgres1",
+      "canCreate": true,
+      "canRead": true,
+      "canUpdate": true,
+      "canDelete": true,
+      "entityType": {
+        "name": "SklSalesByStore",
+        "dbName": "sales_by_store",
+        "keyName": ["store"],
+        "property": [
+          {
+            "name": "store",
+            "dbName": "store",
+            "edmType": "Edm.String",
+            "jdbcType": "Types.VARCHAR",
+            "dbType": "text",
+            "jdbcStream": true,
+            "nullable": true
+          },
+          {
+            "name": "manager",
+            "dbName": "manager",
+            "edmType": "Edm.String",
+            "jdbcType": "Types.VARCHAR",
+            "dbType": "text",
+            "jdbcStream": true,
+            "nullable": true
+          },
+          {
+            "name": "total_sales",
+            "dbName": "total_sales",
+            "edmType": "Edm.Decimal",
+            "jdbcType": "Types.NUMERIC",
+            "dbType": "numeric",
+            "precision": 12,
+            "scale": 2,
+            "nullable": true
+          }
+        ]
+      }
+    },
+    {
+      "name": "SklStaffs",
+      "description": "Description.",
+      "dbSettingName": "postgres1",
+      "canCreate": true,
+      "canRead": true,
+      "canUpdate": true,
+      "canDelete": true,
+      "entityType": {
+        "name": "SklStaff",
+        "dbName": "staff",
+        "keyName": ["staff_id"],
+        "property": [
+          {
+            "name": "staff_id",
+            "dbName": "staff_id",
+            "edmType": "Edm.Int32",
+            "jdbcType": "Types.INTEGER",
+            "dbType": "serial",
+            "autoGenKey": true,
+            "nullable": true
+          },
+          {
+            "name": "first_name",
+            "dbName": "first_name",
+            "edmType": "Edm.String",
+            "jdbcType": "Types.VARCHAR",
+            "dbType": "varchar",
+            "nullable": false,
+            "maxLength": 45
+          },
+          {
+            "name": "last_name",
+            "dbName": "last_name",
+            "edmType": "Edm.String",
+            "jdbcType": "Types.VARCHAR",
+            "dbType": "varchar",
+            "nullable": false,
+            "maxLength": 45
+          },
+          {
+            "name": "address_id",
+            "dbName": "address_id",
+            "edmType": "Edm.Int16",
+            "jdbcType": "Types.SMALLINT",
+            "dbType": "int2",
+            "nullable": false
+          },
+          {
+            "name": "email",
+            "dbName": "email",
+            "edmType": "Edm.String",
+            "jdbcType": "Types.VARCHAR",
+            "dbType": "varchar",
+            "nullable": true,
+            "maxLength": 50
+          },
+          {
+            "name": "store_id",
+            "dbName": "store_id",
+            "edmType": "Edm.Int16",
+            "jdbcType": "Types.SMALLINT",
+            "dbType": "int2",
+            "nullable": false
+          },
+          {
+            "name": "active",
+            "dbName": "active",
+            "edmType": "Edm.Boolean",
+            "jdbcType": "Types.BIT",
+            "dbType": "bool",
+            "nullable": false,
+            "dbDefault": "true"
+          },
+          {
+            "name": "username",
+            "dbName": "username",
+            "edmType": "Edm.String",
+            "jdbcType": "Types.VARCHAR",
+            "dbType": "varchar",
+            "nullable": false,
+            "maxLength": 16
+          },
+          {
+            "name": "password",
+            "dbName": "password",
+            "edmType": "Edm.String",
+            "jdbcType": "Types.VARCHAR",
+            "dbType": "varchar",
+            "nullable": true,
+            "maxLength": 40
+          },
+          {
+            "name": "last_update",
+            "dbName": "last_update",
+            "edmType": "Edm.DateTimeOffset",
+            "jdbcType": "Types.TIMESTAMP",
+            "dbType": "timestamp",
+            "nullable": false,
+            "dbDefault": "now()"
+          },
+          {
+            "name": "picture",
+            "dbName": "picture",
+            "edmType": "Edm.Binary",
+            "jdbcType": "Types.BINARY",
+            "dbType": "bytea",
+            "nullable": true
+          }
+        ]
+      }
+    },
+    {
+      "name": "SklStaffLists",
+      "description": "Description.",
+      "dbSettingName": "postgres1",
+      "canCreate": true,
+      "canRead": true,
+      "canUpdate": true,
+      "canDelete": true,
+      "entityType": {
+        "name": "SklStaffList",
+        "dbName": "staff_list",
+        "keyName": ["id"],
+        "property": [
+          {
+            "name": "id",
+            "dbName": "id",
+            "edmType": "Edm.Int32",
+            "jdbcType": "Types.INTEGER",
+            "dbType": "int4",
+            "nullable": true
+          },
+          {
+            "name": "name",
+            "dbName": "name",
+            "edmType": "Edm.String",
+            "jdbcType": "Types.VARCHAR",
+            "dbType": "text",
+            "jdbcStream": true,
+            "nullable": true
+          },
+          {
+            "name": "address",
+            "dbName": "address",
+            "edmType": "Edm.String",
+            "jdbcType": "Types.VARCHAR",
+            "dbType": "varchar",
+            "nullable": true,
+            "maxLength": 50
+          },
+          {
+            "name": "zip_code",
+            "dbName": "zip code",
+            "edmType": "Edm.String",
+            "jdbcType": "Types.VARCHAR",
+            "dbType": "varchar",
+            "nullable": true,
+            "maxLength": 10
+          },
+          {
+            "name": "phone",
+            "dbName": "phone",
+            "edmType": "Edm.String",
+            "jdbcType": "Types.VARCHAR",
+            "dbType": "varchar",
+            "nullable": true,
+            "maxLength": 20
+          },
+          {
+            "name": "city",
+            "dbName": "city",
+            "edmType": "Edm.String",
+            "jdbcType": "Types.VARCHAR",
+            "dbType": "varchar",
+            "nullable": true,
+            "maxLength": 50
+          },
+          {
+            "name": "country",
+            "dbName": "country",
+            "edmType": "Edm.String",
+            "jdbcType": "Types.VARCHAR",
+            "dbType": "varchar",
+            "nullable": true,
+            "maxLength": 50
+          },
+          {
+            "name": "sid",
+            "dbName": "sid",
+            "edmType": "Edm.Int16",
+            "jdbcType": "Types.SMALLINT",
+            "dbType": "int2",
+            "nullable": true
+          }
+        ]
+      }
+    },
+    {
+      "name": "SklStores",
+      "description": "Description.",
+      "dbSettingName": "postgres1",
+      "canCreate": true,
+      "canRead": true,
+      "canUpdate": true,
+      "canDelete": true,
+      "entityType": {
+        "name": "SklStore",
+        "dbName": "store",
+        "keyName": ["store_id"],
+        "property": [
+          {
+            "name": "store_id",
+            "dbName": "store_id",
+            "edmType": "Edm.Int32",
+            "jdbcType": "Types.INTEGER",
+            "dbType": "serial",
+            "autoGenKey": true,
+            "nullable": true
+          },
+          {
+            "name": "manager_staff_id",
+            "dbName": "manager_staff_id",
+            "edmType": "Edm.Int16",
+            "jdbcType": "Types.SMALLINT",
+            "dbType": "int2",
+            "nullable": false
+          },
+          {
+            "name": "address_id",
+            "dbName": "address_id",
+            "edmType": "Edm.Int16",
+            "jdbcType": "Types.SMALLINT",
+            "dbType": "int2",
+            "nullable": false
+          },
+          {
+            "name": "last_update",
+            "dbName": "last_update",
+            "edmType": "Edm.DateTimeOffset",
+            "jdbcType": "Types.TIMESTAMP",
+            "dbType": "timestamp",
+            "nullable": false,
+            "dbDefault": "now()"
+          }
+        ]
+      }
+    }
+  ]
+}
