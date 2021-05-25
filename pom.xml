@@ -12,10 +12,10 @@
 
 	<groupId>jp.igapyon.oiyokan</groupId>
 	<artifactId>oiyokan-demosite</artifactId>
-	<version>1.15.20210519a</version>
+	<version>1.17.20210525a</version>
 	<name>oiyokan-demosite</name>
-	<description>Oiyokan is a simple OData v4 Server. (based on Apache
-		Olingo / Spring Boot / h2 database)</description>
+	<description>Oiyokan DemoSite. Oiyokan is a simple OData v4 Server. (based on Apache
+		Olingo / h2 database)</description>
 	<url>https://github.com/igapyon/oiyokan</url>
 
 	<!-- see: https://maven.apache.org/guides/mini/guide-central-repository-upload.html -->
@@ -86,7 +86,7 @@
 		<dependency>
 			<groupId>jp.igapyon.oiyokan</groupId>
 			<artifactId>oiyokan</artifactId>
-			<version>1.15.20210519b</version>
+			<version>1.17.20210525e</version>
 		</dependency>
 
 		<dependency>
