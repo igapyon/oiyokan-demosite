@@ -34,6 +34,8 @@ import org.apache.olingo.server.api.ServiceMetadata;
 import jp.oiyokan.OiyokanEdmProvider;
 import jp.oiyokan.OiyokanEntityCollectionProcessor;
 import jp.oiyokan.OiyokanEntityProcessor;
+import jp.oiyokan.OiyokanUnittestUtil;
+import jp.oiyokan.common.OiyoInfo;
 
 /**
  * Utility class for OData test
@@ -54,17 +56,19 @@ public class OiyokanTestUtil {
     }
 
     public static ODataHttpHandler getHandler() throws Exception {
+        final OiyoInfo oiyoInfo = OiyokanUnittestUtil.setupUnittestDatabase();
+
         final OData odata = OData.newInstance();
 
         // EdmProvider を登録.
-        final ServiceMetadata edm = odata.createServiceMetadata(new OiyokanEdmProvider(), new ArrayList<>());
+        final ServiceMetadata edm = odata.createServiceMetadata(new OiyokanEdmProvider(oiyoInfo), new ArrayList<>());
         final ODataHttpHandler handler = odata.createHandler(edm);
 
         // EntityCollectionProcessor を登録.
-        handler.register(new OiyokanEntityCollectionProcessor());
+        handler.register(new OiyokanEntityCollectionProcessor(oiyoInfo));
 
         // EntityProcessor を登録.
-        handler.register(new OiyokanEntityProcessor());
+        handler.register(new OiyokanEntityProcessor(oiyoInfo));
 
         return handler;
     }

@@ -21,7 +21,10 @@ import jp.oiyokan.common.OiyoInfo;
 
 public class OiyokanUnittestUtil {
     public static OiyoInfo setupUnittestDatabase() throws ODataApplicationException {
-        final OiyoInfo oiyoInfo = OiyokanEdmProvider.getOiyoInfoInstance();
+        final OiyoInfo oiyoInfo = new OiyoInfo();
+        // シングルトンな OiyoSettings を利用。
+        OiyokanEdmProvider.setupOiyoSettingsInstance(oiyoInfo);
+
         // 取得した OiyoInfo をそのまま返却.
         return oiyoInfo;
     }
