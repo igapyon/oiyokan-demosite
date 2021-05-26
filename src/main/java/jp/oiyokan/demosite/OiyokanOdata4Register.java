@@ -25,6 +25,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import jp.oiyokan.OiyokanOdata4RegisterImpl;
+import jp.oiyokan.common.OiyoInfo;
 
 /**
  * Oiyokan (OData v4 server) を Spring Boot の Servlet として登録.
@@ -49,7 +50,9 @@ public class OiyokanOdata4Register {
     public void serv(final HttpServletRequest req, final HttpServletResponse resp) throws ServletException {
         // ライブラリ側でキャッシュOFFを実施する。
 
+        final OiyoInfo oiyoInfo = new OiyoInfo();
+
         // Process Oiyokan.
-        OiyokanOdata4RegisterImpl.serv(req, resp, ODATA_ROOTPATH);
+        OiyokanOdata4RegisterImpl.serv(oiyoInfo, req, resp, ODATA_ROOTPATH);
     }
 }
