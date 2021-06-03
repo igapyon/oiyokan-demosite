@@ -1,3 +1,13 @@
+# Release 1.19 (2021-06-03)
+
+## EN
+
+- Follows the main library upgrade.
+
+## JA
+
+- 本体ライブラリバージョンアップに追従。
+
 # Release 1.18 (2021-05-26)
 
 ## JA

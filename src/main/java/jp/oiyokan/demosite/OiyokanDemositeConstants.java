@@ -19,5 +19,5 @@ package jp.oiyokan.demosite;
  * Oiyokan Demosite の定数.
  */
 public class OiyokanDemositeConstants {
-    public static final String VERSION = "1.18.20210526a";
+    public static final String VERSION = "1.19.20210603a";
 }
