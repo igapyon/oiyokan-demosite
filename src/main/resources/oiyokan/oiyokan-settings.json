@@ -2289,8 +2289,8 @@
             "jdbcType": "Types.DECIMAL",
             "dbType": "DECIMAL",
             "nullable": true,
-            "precision": 2147483647,
-            "scale": 2147483647
+            "precision": 18,
+            "scale": 2
           }
         ]
       }
@@ -2331,8 +2331,8 @@
             "jdbcType": "Types.DECIMAL",
             "dbType": "DECIMAL",
             "nullable": true,
-            "precision": 2147483647,
-            "scale": 2147483647
+            "precision": 18,
+            "scale": 2
           }
         ]
       }
