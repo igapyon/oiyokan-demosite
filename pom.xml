@@ -12,11 +12,10 @@
 
 	<groupId>jp.igapyon.oiyokan</groupId>
 	<artifactId>oiyokan-demosite</artifactId>
-	<version>1.19.20210603a</version>
+	<version>1.19.20210606a</version>
 	<name>oiyokan-demosite</name>
-	<description>Oiyokan DemoSite. Oiyokan is a simple OData v4 Server. (based on Apache
-		Olingo / h2 database)</description>
-	<url>https://github.com/igapyon/oiyokan</url>
+	<description>This is the Oiyokan demo site, available under the Apache license, where you can experience the OData v4 Server for free.</description>
+	<url>https://github.com/igapyon/oiyokan-demosite</url>
 
 	<!-- see: https://maven.apache.org/guides/mini/guide-central-repository-upload.html -->
 	<licenses>
