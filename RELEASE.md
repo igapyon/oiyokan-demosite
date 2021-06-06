@@ -1,3 +1,13 @@
+# Release 1.19.20210606 (2021-06-06)
+
+## EN
+
+- Revamped DemoSite description HTML, etc.
+
+## JA
+
+- DemoSiteの説明HTMLなどを刷新
+
 # Release 1.19 (2021-06-03)
 
 ## EN
