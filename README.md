@@ -48,18 +48,18 @@ Getting Started with the Oiyokan can be viewed at the following URL (written in 
 
 # Try the Oiyokan OData v4 sample server
 
-## Heroku
-
-You can find the running Oiyokan demo site server at Heroku.
-
-- https://oiyokan.herokuapp.com/
-
 ## Local
 
-You can try OData v4 sample server at your computer.
+You can run OData v4 DemoSite server at your computer.
 
 Check out source code repository and you can run it as Spring Boot Web Server.
 
 ```sh
 mvn package spring-boot:run
 ```
+
+## Heroku
+
+You can find the running Oiyokan DemoSite server at Heroku.
+
+- https://oiyokan.herokuapp.com/
